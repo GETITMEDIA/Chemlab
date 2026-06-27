@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Instruments</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+/* ---------- BODY ---------- */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f8fb;
+  padding: 20px;
+}
+
+/* ---------- SECTION ---------- */
+.section-card {
+  background: #fff;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid #e5eef5;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f7fbff;
+}
+
+.section-header h2 {
+  font-size: 18px;
+  color: #1b5e7a;
+}
+
+.toggle-btn {
+  background: #e3f2fd;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* ---------- GRID ---------- */
+.instrument-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.instrument-card {
+  background: #fff;
+  border: 1px solid #e0edf3;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.instrument-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.instrument-icon {
+  width: 40px;
+  height: 40px;
+  background: #e3f2fd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+}
+
+/* ---------- MOBILE ---------- */
+/* ---------- MOBILE IMPROVEMENTS ---------- */
+@media (max-width: 768px) {
+
+  .section-card {
+    border-radius: 14px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .section-header h2 {
+    font-size: 16px;
+  }
+
+  .toggle-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .instrument-grid {
+    grid-template-columns: 1fr; /* single column */
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .instrument-card {
+    padding: 12px;
+    border-radius: 10px;
+    gap: 10px;
+  }
+
+  .instrument-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .instrument-card {
+    font-size: 14px;
+  }
+
+  /* ---------- MODAL MOBILE ---------- */
+  .modal-box {
+    width: 90%;
+    max-width: 320px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .modal-box p {
+    font-size: 14px;
+  }
+
+  .modal-box button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= ANALYTICAL ================= -->
+<div class="section-card">
+  <div class="section-header">
+    <h2><i class="fas fa-chart-line"></i> Analytical Instruments</h2>
+    <button class="toggle-btn" onclick="toggleSection('analytical', this)">Show</button>
+  </div>
+
+  <div id="analytical" class="instrument-grid hidden">
+    <div class="instrument-card" onclick="showInfo('uv')"><div class="instrument-icon"><i class="fas fa-sun"></i></div>UV–Visible Spectrophotometer</div>
+    <div class="instrument-card" onclick="showInfo('ftir')"><div class="instrument-icon"><i class="fas fa-wave-square"></i></div>FTIR Spectrophotometer</div>
+    <div class="instrument-card" onclick="showInfo('hplc')"><div class="instrument-icon"><i class="fas fa-flask"></i></div>UHPLC / HPLC System</div>
+    <div class="instrument-card" onclick="showInfo('gc')"><div class="instrument-icon"><i class="fas fa-fire"></i></div>GC–HS</div>
+    <div class="instrument-card" onclick="showInfo('icp')"><div class="instrument-icon"><i class="fas fa-atom"></i></div>ICP–OES</div>
+    <div class="instrument-card" onclick="showInfo('protein')"><div class="instrument-icon"><i class="fas fa-dna"></i></div>Protein Analyzer</div>
+    <div class="instrument-card" onclick="showInfo('fat')"><div class="instrument-icon"><i class="fas fa-seedling"></i></div>Fat & Fiber System</div>
+    <div class="instrument-card" onclick="showInfo('balance')"><div class="instrument-icon"><i class="fas fa-weight-hanging"></i></div>Analytical Balance</div>
+    <div class="instrument-card" onclick="showInfo('ph')"><div class="instrument-icon"><i class="fas fa-tint"></i></div>pH Meter</div>
+    <div class="instrument-card" onclick="showInfo('cond')"><div class="instrument-icon"><i class="fas fa-bolt"></i></div>Conductivity Meter</div>
+    <div class="instrument-card" onclick="showInfo('visco')"><div class="instrument-icon"><i class="fas fa-water"></i></div>Viscometer</div>
+  </div>
+</div>
+
+<!-- ================= TABLET ================= -->
+<div class="section-card">
+  <div class="section-header">
+    <h2><i class="fas fa-capsules"></i> Tablet & Formulation</h2>
+    <button class="toggle-btn" onclick="toggleSection('tablet', this)">Show</button>
+  </div>
+
+  <div id="tablet" class="instrument-grid hidden">
+    <div class="instrument-card" onclick="showInfo('dissolution')"><div class="instrument-icon"><i class="fas fa-vial"></i></div>Dissolution Apparatus</div>
+    <div class="instrument-card" onclick="showInfo('friability')"><div class="instrument-icon"><i class="fas fa-tablets"></i></div>Friability Apparatus</div>
+    <div class="instrument-card" onclick="showInfo('dt')"><div class="instrument-icon"><i class="fas fa-stopwatch"></i></div>Disintegration Test Apparatus</div>
+  </div>
+</div>
+
+<!-- ================= MICRO ================= -->
+<div class="section-card">
+  <div class="section-header">
+    <h2><i class="fas fa-bacteria"></i> Microbiology</h2>
+    <button class="toggle-btn" onclick="toggleSection('micro', this)">Show</button>
+  </div>
+
+  <div id="micro" class="instrument-grid hidden">
+    <div class="instrument-card" onclick="showInfo('laf')"><div class="instrument-icon"><i class="fas fa-wind"></i></div>Laminar Air Flow</div>
+    <div class="instrument-card" onclick="showInfo('autoclave')"><div class="instrument-icon"><i class="fas fa-temperature-high"></i></div>Autoclave</div>
+    <div class="instrument-card" onclick="showInfo('incubator')"><div class="instrument-icon"><i class="fas fa-thermometer-half"></i></div>Incubator</div>
+    <div class="instrument-card" onclick="showInfo('colony')"><div class="instrument-icon"><i class="fas fa-dot-circle"></i></div>Colony Counter</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <p id="text"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+
+/* Toggle */
+function toggleSection(id, btn){
+  const el = document.getElementById(id);
+  el.classList.toggle('hidden');
+  btn.textContent = el.classList.contains('hidden') ? 'Show' : 'Hide';
+}
+
+/* Info Data */
+const info = {
+  uv:"Measures absorbance of UV/Visible light.",
+  ftir:"Identifies functional groups using IR spectra.",
+  hplc:"Separates and quantifies compounds.",
+  gc:"Gas analysis with headspace sampling.",
+  icp:"Metal analysis using plasma emission.",
+  protein:"Determines protein content.",
+  fat:"Analyzes fat and fiber.",
+  balance:"High precision weighing.",
+  ph:"Measures acidity.",
+  cond:"Measures conductivity.",
+  visco:"Measures viscosity.",
+  dissolution:"Drug release testing.",
+  friability:"Tablet strength testing.",
+  dt:"Tablet disintegration time.",
+  laf:"Sterile air workspace.",
+  autoclave:"Steam sterilization.",
+  incubator:"Microbial growth chamber.",
+  colony:"Counts bacterial colonies."
+};
+
+/* Show Modal */
+function showInfo(type){
+  document.getElementById("text").innerText = info[type];
+  document.getElementById("modal").style.display = "flex";
+}
+
+/* Close */
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

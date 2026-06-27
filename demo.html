@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Synthiya Research Labs | Advanced Pharma & Cosmetics Testing</title>
+
+<!-- Google Fonts + Font Awesome 6 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ========== HERO SECTION (new modern design) ========== */
+.hero {
+    background: linear-gradient(135deg, #0b2b3b 0%, #0a1c2a 100%);
+    border-radius: 2rem;
+    padding: 3rem 2.5rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(59,130,246,0.25) 0%, rgba(6,182,212,0.1) 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: -5%;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(168,85,247,0.2) 0%, rgba(6,182,212,0.05) 80%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(120deg, #ffffff, #b9e6ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #d9f0ff;
+    margin-bottom: 1.25rem;
+    border: 0.5px solid rgba(255,255,255,0.2);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #e0edf5;
+    max-width: 70%;
+    margin-top: 0.8rem;
+    opacity: 0.9;
+}
+
+.mission-text {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.mission-tag {
+    background: #1e3a5f;
+    border-radius: 60px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mission-tag i {
+    font-size: 1rem;
+    color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1.5rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        max-width: 100%;
+    }
+}
+
+/* ========== TIMELINE (enhanced modern vertical timeline) ========== */
+.timeline-section {
+    margin: 3rem 0 2rem;
+}
+
+.timeline-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(59,130,246,0.25);
+    padding-bottom: 0.75rem;
+}
+
+.timeline-header h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #0f3b4f, #1b4a6e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.3px;
+}
+
+.accent-badge {
+    background: #eaf5ff;
+    padding: 6px 16px;
+    border-radius: 60px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0369a1;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    top: 0.5rem;
+    width: 3px;
+    height: calc(100% - 1rem);
+    background: linear-gradient(180deg, #2563eb, #38bdf8, #7c3aed);
+    border-radius: 3px;
+}
+
+.item {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1.8rem;
+    position: relative;
+    box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.item:hover {
+    transform: translateX(6px);
+    box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.12);
+    border-color: rgba(59,130,246,0.25);
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    left: -2.35rem;
+    top: 2rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: white;
+    border: 3px solid #2563eb;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+    transition: 0.2s;
+}
+
+.item:hover::before {
+    background: #2563eb;
+    border-color: white;
+    transform: scale(1.1);
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #eef2ff;
+    padding: 0.25rem 0.9rem;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #1e40af;
+    margin-bottom: 0.8rem;
+}
+
+.tag i {
+    font-size: 0.7rem;
+}
+
+.item h3 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #0c2e42;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.2px;
+}
+
+.meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: #f8fafc;
+    padding: 0.2rem 0.9rem;
+    border-radius: 30px;
+    color: #2563eb;
+    margin-bottom: 0.9rem;
+    border: 0.5px solid #e2edff;
+}
+
+.meta i {
+    font-size: 0.75rem;
+}
+
+.item p {
+    color: #2c475e;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* ========== IMAGE GALLERY (curated + cinematic) ========== */
+.image-gallery-wrap {
+    margin: 3.5rem 0 2rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(120deg, #1e3b5a, #2c6288);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    background: none;
+    color: #2c6288;
+    font-size: 2rem;
+}
+
+.image-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.8rem;
+}
+
+.img-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 12px 25px -15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.img-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 35px -15px rgba(0, 0, 0, 0.3);
+}
+
+.img-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+}
+
+.img-card:hover img {
+    transform: scale(1.08);
+}
+
+.img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(7, 27, 41, 0.92) 0%, rgba(15, 45, 65, 0.8) 100%);
+    backdrop-filter: blur(2px);
+    color: white;
+    padding: 1rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-out;
+}
+
+.img-card:hover .img-overlay {
+    transform: translateY(0);
+}
+
+/* caption style */
+.img-card .overlay-icon {
+    margin-right: 6px;
+    font-size: 0.85rem;
+}
+
+/* ========== FOOTER & STATS ========== */
+.stats-mini {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0 1.5rem;
+    border: 1px solid rgba(59,130,246,0.2);
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #0f3b4f;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #2c6288;
+    letter-spacing: 0.5px;
+}
+
+/* responsive fix */
+@media (max-width: 680px) {
+    body {
+        padding: 1rem;
+    }
+    .timeline {
+        padding-left: 1.2rem;
+    }
+    .item::before {
+        left: -1.7rem;
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+    .item {
+        padding: 1.2rem;
+    }
+    .stats-mini {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .image-section {
+        gap: 1rem;
+    }
+    .hero h1 {
+        font-size: 1.85rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- Hero Section Redesigned -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-flask"></i> ISO 9001:2015 · NABL Accredited
+            </div>
+            <h1>Synthiya Research Labs<br>Pvt Ltd</h1>
+            <p>Established on 12 December 2012 under Ministry of Corporate Affairs, Government of India</p>
+            <div class="mission-text">
+                <span class="mission-tag"><i class="fas fa-microscope"></i> Pharma Testing</span>
+                <span class="mission-tag"><i class="fas fa-leaf"></i> Cosmetic Analysis</span>
+                <span class="mission-tag"><i class="fas fa-certificate"></i> AYUSH Products</span>
+                <span class="mission-tag"><i class="fas fa-chart-line"></i> Quality Excellence</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline: Accreditations & Milestones -->
+    <div class="timeline-section">
+        <div class="timeline-header">
+            <h2><i class="fas fa-trophy" style="color: #2563eb; margin-right: 6px;"></i> Regulatory Milestones</h2>
+            <div class="accent-badge"><i class="far fa-calendar-alt"></i> 2014 – 2025</div>
+        </div>
+        <div class="timeline">
+
+            <div class="item">
+                <span class="tag"><i class="fas fa-file-medical"></i> CDSCO</span>
+                <h3>FORM 37 Approval</h3>
+                <div class="meta"><i class="far fa-calendar-check"></i> 16.12.2014</div>
+                <p>Testing Pharmaceuticals and Cosmetics — First major regulatory milestone.</p>
+            </div>
+
+            <div class="item">
+                <span class="tag"><i class="fas fa-check-circle"></i> ISO</span>
+                <h3>ISO 9001:2015</h3>
+                <div class="meta"><i class="far fa-calendar-check"></i> 07.07.2015</div>
+                <p>Quality Management System certified, ensuring global standard processes.</p>
+            </div>
+
+            <div class="item">
+                <span class="tag"><i class="fas fa-om"></i> AYUSH</span>
+                <h3>FORM 48 Approval</h3>
+                <div class="meta"><i class="far fa-calendar-check"></i> 01.07.2022</div>
+                <p>Authorized for testing AYUSH Products (Ayurveda, Yoga, Unani, Siddha, Homeopathy).</p>
+            </div>
+
+            <div class="item">
+                <span class="tag"><i class="fas fa-award"></i> NABL</span>
+                <h3>NABL 120 Accreditation</h3>
+                <div class="meta"><i class="far fa-calendar-check"></i> 16.12.2024</div>
+                <p>Accredited for Drugs, Cosmetics and Essential Oils — international recognition.</p>
+            </div>
+
+            <div class="item">
+                <span class="tag"><i class="fas fa-spray-can"></i> CDSCO</span>
+                <h3>COS 23 Licence</h3>
+                <div class="meta"><i class="far fa-calendar-check"></i> 03.01.2025</div>
+                <p>Cosmetic Product Testing license, expanding capabilities for beauty & personal care.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Gallery (high-res laboratory & analysis themes) -->
+    <div class="image-gallery-wrap">
+        <div class="section-title">
+            <i class="fas fa-camera-retro"></i> 
+            <span>Innovation in action</span>
+        </div>
+        <div class="image-section">
+            <div class="img-card">
+                <img src="https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Pharmaceutical testing" loading="lazy">
+                <div class="img-overlay"><i class="fas fa-capsules overlay-icon"></i> Pharma Testing</div>
+            </div>
+            <div class="img-card">
+                <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Cosmetic analysis" loading="lazy">
+                <div class="img-overlay"><i class="fas fa-hand-peace overlay-icon"></i> Cosmetic Analysis</div>
+            </div>
+            <div class="img-card">
+                <img src="https://images.pexels.com/photos/1174085/pexels-photo-1174085.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Laboratory equipment HPLC" loading="lazy">
+                <div class="img-overlay"><i class="fas fa-microscope overlay-icon"></i> Lab Equipment</div>
+            </div>
+            <div class="img-card">
+                <img src="https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Quality control from professional" loading="lazy">
+                <div class="img-overlay"><i class="fas fa-clipboard-list overlay-icon"></i> Quality Control</div>
+            </div>
+            <div class="img-card">
+                <img src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Research and development team" loading="lazy">
+                <div class="img-overlay"><i class="fas fa-flask overlay-icon"></i> Research Work</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mini stats: credibility -->
+    <div class="stats-mini">
+        <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years of Excellence</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Govt. Approvals</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Compliance Focus</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">NABL</div>
+            <div class="stat-label">ISO 15189:2022</div>
+        </div>
+    </div>
+
+  
+</div>
+
+<!-- optional smooth hover fallback (pure CSS already) -->
+</body>
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LabTraining Pro | Animated Lab Background</title>
+<!-- Google Fonts + Font Awesome 6 (free icons) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 10% 30%, #f0f9ff, #e6f0f5);
+    color: #1a2c3e;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    position: relative;
+    /* Background animation layer: moving glass/chemical particles */
+    overflow-x: hidden;
+  }
+
+  /* animated background container (floating elements + moving gradient) */
+  .lab-bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  /* moving gradient base */
+  .moving-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 40%, rgba(144, 224, 239, 0.15), rgba(39, 103, 123, 0.08), rgba(230, 240, 245, 0.2));
+    animation: shiftGradient 22s ease infinite alternate;
+  }
+
+  @keyframes shiftGradient {
+    0% {
+      background: radial-gradient(circle at 20% 30%, rgba(164, 217, 231, 0.2), rgba(45, 112, 128, 0.08), rgba(215, 235, 242, 0.2));
+      transform: scale(1);
+    }
+    50% {
+      background: radial-gradient(circle at 80% 70%, rgba(122, 197, 216, 0.25), rgba(23, 92, 109, 0.1), rgba(195, 229, 240, 0.2));
+      transform: scale(1.02);
+    }
+    100% {
+      background: radial-gradient(circle at 40% 85%, rgba(94, 180, 203, 0.22), rgba(54, 128, 146, 0.09), rgba(215, 235, 242, 0.25));
+      transform: scale(1);
+    }
+  }
+
+  /* floating particles: beaker, molecule, microscope icons + circles */
+  .float-particle {
+    position: absolute;
+    font-size: 1.8rem;
+    opacity: 0.18;
+    color: #1c6f8c;
+    animation: floatAround 23s infinite alternate ease-in-out;
+    pointer-events: none;
+  }
+
+  .particle-circle {
+    position: absolute;
+    background: rgba(28, 111, 140, 0.08);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: pulseShift 18s infinite alternate;
+    pointer-events: none;
+  }
+
+  @keyframes floatAround {
+    0% {
+      transform: translate(0px, 0px) rotate(0deg);
+      opacity: 0.12;
+    }
+    100% {
+      transform: translate(40px, -35px) rotate(12deg);
+      opacity: 0.26;
+    }
+  }
+
+  @keyframes pulseShift {
+    0% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(1.3) translate(30px, -20px);
+      opacity: 0.08;
+    }
+  }
+
+  /* additional floating particles with different speeds */
+  .float-particle:nth-child(1) { top: 12%; left: 7%; animation-duration: 19s; font-size: 2rem; }
+  .float-particle:nth-child(2) { top: 68%; left: 85%; animation-duration: 26s; animation-delay: -2s; font-size: 2.4rem; }
+  .float-particle:nth-child(3) { top: 45%; left: 22%; animation-duration: 21s; animation-delay: -5s; font-size: 1.8rem; }
+  .float-particle:nth-child(4) { top: 80%; left: 15%; animation-duration: 28s; animation-delay: -1s; font-size: 2.2rem; }
+  .float-particle:nth-child(5) { top: 20%; left: 78%; animation-duration: 24s; animation-delay: -7s; font-size: 1.6rem; }
+  .float-particle:nth-child(6) { top: 55%; left: 48%; animation-duration: 30s; animation-delay: -3s; font-size: 2.6rem; }
+  .float-particle:nth-child(7) { top: 92%; left: 60%; animation-duration: 22s; animation-delay: -4s; font-size: 2rem; }
+
+  .particle-circle:nth-child(8) { width: 280px; height: 280px; top: -50px; left: -80px; animation-duration: 25s; }
+  .particle-circle:nth-child(9) { width: 420px; height: 420px; bottom: -150px; right: -120px; animation-duration: 30s; animation-delay: -3s; }
+  .particle-circle:nth-child(10) { width: 200px; height: 200px; top: 40%; left: 65%; animation-duration: 20s; filter: blur(28px); }
+
+  /* hero and containers stay above animation with slight relative z */
+  .hero-header, .container, footer {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* modern header with glassmorphism touch - slight transparency to see bg? */
+  .hero-header {
+    background: linear-gradient(125deg, #0B3B4F 0%, #1D5A6E 55%, #2C7A8C 100%);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 12px 25px -12px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-header h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFFFFF, #E0F2FE);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-header h1 i {
+    background: none;
+    color: #caf0f8;
+    text-shadow: none;
+  }
+
+  .hero-sub {
+    color: #cce7f0;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  .container {
+    width: 92%;
+    max-width: 1280px;
+    margin: 2.2rem auto 2rem auto;
+    backdrop-filter: blur(0px);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 28px;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0,0,0,0.02);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+
+  .intro-card {
+    padding: 1.8rem 2rem;
+    margin-bottom: 2rem;
+    background: white;
+    border-left: 6px solid #1E88E5;
+    border-radius: 28px;
+  }
+
+  .intro-card h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #0c4e6e;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+  }
+
+  .rule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px 20px;
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .rule-grid li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    background: #F8FBFE;
+    padding: 10px 16px;
+    border-radius: 60px;
+    transition: 0.2s;
+    color: #1f5068;
+  }
+
+  .rule-grid li i {
+    width: 24px;
+    color: #1E88E5;
+    font-size: 1.2rem;
+  }
+
+  .section-card {
+    background: white;
+    border-radius: 32px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9f0f5;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background: rgba(255,255,255,0.95);
+    border-bottom: 1px solid #eef3f8;
+    flex-wrap: wrap;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: linear-gradient(130deg, #16657a, #2883a3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toggle-modern {
+    background: #EFF7FC;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 60px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #1E5A74;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', monospace;
+  }
+
+  .toggle-modern:hover {
+    background: #d4e9f2;
+    color: #0C4F69;
+    transform: scale(0.97);
+  }
+
+  .instrument-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+    padding: 1.8rem 2rem;
+    transition: all 0.2s;
+  }
+
+  .instrument-card {
+    background: #FEFEFE;
+    border-radius: 1.5rem;
+    padding: 1.2rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    border: 1px solid #e2edf2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  }
+
+  .instrument-card:hover {
+    transform: translateY(-6px);
+    background: white;
+    border-color: #aad0e6;
+    box-shadow: 0 18px 28px -12px rgba(28, 100, 120, 0.25);
+  }
+
+  .instrument-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    background: #E7F3F9;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #197c9e;
+    transition: 0.2s;
+  }
+
+  .instrument-card:hover .instrument-icon {
+    background: #cdebf5;
+    color: #0c5d7c;
+    transform: scale(1.02);
+  }
+
+  .instrument-info h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1A4E68;
+    margin-bottom: 5px;
+  }
+
+  .instrument-info p {
+    font-size: 0.8rem;
+    color: #628c9e;
+    font-weight: 500;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* MODAL premium style */
+  .modal-premium {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 35, 45, 0.75);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .modal-container {
+    background: white;
+    max-width: 480px;
+    width: 90%;
+    border-radius: 2rem;
+    padding: 1.8rem 2rem 2rem;
+    box-shadow: 0 35px 45px -20px rgba(0, 0, 0, 0.4);
+    animation: modalPop 0.25s ease-out;
+    border: 1px solid rgba(144, 202, 225, 0.5);
+  }
+
+  @keyframes modalPop {
+    from {
+      opacity: 0;
+      transform: scale(0.96) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #EAF4F9;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .modal-header h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0E5A75;
+  }
+
+  .close-modal {
+    font-size: 28px;
+    font-weight: 400;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #6c8d9c;
+    transition: 0.1s;
+    line-height: 1;
+  }
+
+  .close-modal:hover {
+    color: #cd3c2c;
+    transform: scale(1.1);
+  }
+
+  .modal-body {
+    color: #2c4758;
+    font-size: 1rem;
+  }
+
+  .modal-body ul {
+    margin-top: 12px;
+    padding-left: 20px;
+  }
+
+  .modal-body li {
+    margin: 8px 0;
+  }
+
+  .badge-icon {
+    background: #EFF7FC;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #197293;
+    margin-top: 12px;
+  }
+
+  footer {
+    background: #0E3B4A;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: #c9e9f5;
+    font-weight: 500;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+
+  footer span i {
+    margin-right: 6px;
+  }
+
+  @media (max-width: 680px) {
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .instrument-grid {
+      padding: 1.2rem;
+    }
+    .hero-header h1 {
+      font-size: 1.7rem;
+    }
+    .intro-card {
+      padding: 1.2rem;
+    }
+    .rule-grid li {
+      font-size: 0.85rem;
+    }
+  }
+
+
+   /* ----- ANIMATED BACKGROUND LAYER (the only focus) ----- */
+    .lab-bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;   /* allows clicking through background */
+      overflow: hidden;
+    }
+
+    /* moving soft gradient (liquid/chemical atmosphere) */
+    .moving-gradient {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 40%, rgba(120, 200, 220, 0.2), rgba(45, 110, 130, 0.1), rgba(210, 235, 245, 0.25));
+      animation: shiftGradient 22s ease infinite alternate;
+    }
+
+    @keyframes shiftGradient {
+      0% {
+        background: radial-gradient(circle at 20% 30%, rgba(144, 210, 230, 0.25), rgba(35, 100, 120, 0.08), rgba(200, 230, 240, 0.2));
+        transform: scale(1);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 70%, rgba(100, 190, 215, 0.3), rgba(25, 85, 105, 0.12), rgba(185, 225, 238, 0.22));
+        transform: scale(1.02);
+      }
+      100% {
+        background: radial-gradient(circle at 40% 85%, rgba(85, 175, 200, 0.28), rgba(50, 120, 140, 0.1), rgba(195, 228, 240, 0.25));
+        transform: scale(1);
+      }
+    }
+
+    /* floating lab icons (flask, atom, dna, microscope, vial) */
+    .float-particle {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.2;
+      color: #1e6f8f;
+      animation: floatAround 23s infinite alternate ease-in-out;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+    }
+
+    /* soft blurred orbs for depth */
+    .particle-circle {
+      position: absolute;
+      background: rgba(40, 130, 155, 0.08);
+      border-radius: 50%;
+      filter: blur(28px);
+      animation: pulseShift 20s infinite alternate;
+    }
+
+    /* keyframe animations */
+    @keyframes floatAround {
+      0% {
+        transform: translate(0px, 0px) rotate(0deg);
+        opacity: 0.12;
+      }
+      100% {
+        transform: translate(35px, -30px) rotate(12deg);
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes pulseShift {
+      0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.2;
+      }
+      100% {
+        transform: scale(1.4) translate(25px, -20px);
+        opacity: 0.08;
+      }
+    }
+
+    /* individual particle positions & delays for organic motion */
+    .float-particle:nth-child(1) { top: 12%; left: 7%; animation-duration: 19s; font-size: 2.2rem; }
+    .float-particle:nth-child(2) { top: 70%; left: 85%; animation-duration: 26s; animation-delay: -2s; font-size: 2.6rem; }
+    .float-particle:nth-child(3) { top: 45%; left: 22%; animation-duration: 21s; animation-delay: -5s; font-size: 2rem; }
+    .float-particle:nth-child(4) { top: 82%; left: 15%; animation-duration: 28s; animation-delay: -1s; font-size: 2.4rem; }
+    .float-particle:nth-child(5) { top: 20%; left: 78%; animation-duration: 24s; animation-delay: -7s; font-size: 1.8rem; }
+    .float-particle:nth-child(6) { top: 55%; left: 48%; animation-duration: 30s; animation-delay: -3s; font-size: 2.9rem; }
+    .float-particle:nth-child(7) { top: 92%; left: 60%; animation-duration: 22s; animation-delay: -4s; font-size: 2rem; }
+    .float-particle:nth-child(8) { top: 33%; left: 92%; animation-duration: 27s; animation-delay: -6s; font-size: 2.3rem; }
+
+    .particle-circle:nth-child(10) { width: 280px; height: 280px; top: -60px; left: -80px; animation-duration: 25s; }
+    .particle-circle:nth-child(11) { width: 450px; height: 450px; bottom: -120px; right: -100px; animation-duration: 30s; animation-delay: -3s; }
+    .particle-circle:nth-child(12) { width: 220px; height: 220px; top: 40%; left: 70%; animation-duration: 22s; filter: blur(32px); }
+
+    /* optional demo text to show background (can be removed) */
+    .demo-note {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 20vh;
+      color: #0a445c;
+      font-weight: 500;
+      background: rgba(255,255,240,0.7);
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      width: auto;
+      padding: 12px 24px;
+      border-radius: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      pointer-events: none;
+      font-family: monospace;
+    }
+</style>
+</head>
+<body>
+
+  <!-- ========== PURE ANIMATED BACKGROUND ========== -->
+  <div class="lab-bg-animation">
+    <!-- moving gradient atmosphere -->
+    <div class="moving-gradient"></div>
+    
+    <!-- floating glassware / molecular icons -->
+    <div class="float-particle"><i class="fas fa-flask"></i></div>
+    <div class="float-particle"><i class="fas fa-atom"></i></div>
+    <div class="float-particle"><i class="fas fa-dna"></i></div>
+    <div class="float-particle"><i class="fas fa-microscope"></i></div>
+    <div class="float-particle"><i class="fas fa-vial"></i></div>
+    <div class="float-particle"><i class="fas fa-capsules"></i></div>
+    <div class="float-particle"><i class="fas fa-chart-line"></i></div>
+    <div class="float-particle"><i class="fas fa-biohazard"></i></div>
+    
+    <!-- soft glowing circles (chemical fume / liquid effect) -->
+    <div class="particle-circle"></div>
+    <div class="particle-circle"></div>
+    <div class="particle-circle"></div>
+  </div>
+<header class="hero-header">
+  <h1><i class="fas fa-flask"></i> Laboratory Training Program <i class="fas fa-microscope"></i></h1>
+  <div class="hero-sub">next‑gen instrumentation · hands‑on competency · GLP certified</div>
+</header>
+
+<div class="container">
+  <!-- Introduction card: redesigned with icons and modern layout -->
+  <div class="intro-card glass-card">
+    <h2><i class="fas fa-shield-alt"></i> Lab Essentials & Safety</h2>
+    <ul class="rule-grid">
+      <li><i class="fas fa-user-graduate"></i> Guided by expert trainers</li>
+      <li><i class="fas fa-hard-hat"></i> Lab coat & PPE mandatory</li>
+      <li><i class="fas fa-ban"></i> No food/drinks or mobile usage</li>
+      <li><i class="fas fa-eye"></i> Safety first – always follow SOPs</li>
+      <li><i class="fas fa-clipboard-list"></i> Learn Good Laboratory Practices (GLP)</li>
+      <li><i class="fas fa-hand-holding-heart"></i> Gloves & goggles when required</li>
+      <li><i class="fas fa-certificate"></i> Certificate of completion</li>
+      <li><i class="fas fa-people-arrows"></i> Collaborative environment</li>
+    </ul>
+  </div>
+
+  <!-- Analytical Instruments Section -->
+  <div class="section-card">
+    <div class="section-header">
+      <h2><i class="fas fa-chart-line"></i> Analytical Instruments</h2>
+      <button class="toggle-modern" onclick="toggleSection('analyticalGrid', this)"><i class="fas fa-eye"></i> <span>Show</span></button>
+    </div>
+    <div id="analyticalGrid" class="instrument-grid hidden">
+      <div class="instrument-card" onclick="showInstrumentInfo('uv')">
+        <div class="instrument-icon"><i class="fas fa-sun"></i></div>
+        <div class="instrument-info">
+          <h3>UV–Visible Spectrophotometer</h3>
+          <p>Absorbance & quantitative analysis</p>
+        </div>
+      </div>
+      <div class="instrument-card" onclick="showInstrumentInfo('ph')">
+        <div class="instrument-icon"><i class="fas fa-tint"></i></div>
+        <div class="instrument-info">
+          <h3>pH Meter</h3>
+          <p>Acidity / alkalinity measurement</p>
+        </div>
+      </div>
+      <div class="instrument-card" onclick="showInstrumentInfo('balance')">
+        <div class="instrument-icon"><i class="fas fa-weight-hanging"></i></div>
+        <div class="instrument-info">
+          <h3>Analytical Balance</h3>
+          <p>High-precision mass determination</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tablet Testing Section -->
+  <div class="section-card">
+    <div class="section-header">
+      <h2><i class="fas fa-capsules"></i> Tablet Testing</h2>
+      <button class="toggle-modern" onclick="toggleSection('tabletGrid', this)"><i class="fas fa-eye"></i> <span>Show</span></button>
+    </div>
+    <div id="tabletGrid" class="instrument-grid hidden">
+      <div class="instrument-card" onclick="showInstrumentInfo('dissolution')">
+        <div class="instrument-icon"><i class="fas fa-vial"></i></div>
+        <div class="instrument-info">
+          <h3>Dissolution Apparatus</h3>
+          <p>Drug release profiling</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Microbiology Section -->
+  <div class="section-card">
+    <div class="section-header">
+      <h2><i class="fas fa-bacteria"></i> Microbiology</h2>
+      <button class="toggle-modern" onclick="toggleSection('microGrid', this)"><i class="fas fa-eye"></i> <span>Show</span></button>
+    </div>
+    <div id="microGrid" class="instrument-grid hidden">
+      <div class="instrument-card" onclick="showInstrumentInfo('laf')">
+        <div class="instrument-icon"><i class="fas fa-wind"></i></div>
+        <div class="instrument-info">
+          <h3>Laminar Air Flow</h3>
+          <p>Sterile working environment</p>
+        </div>
+      </div>
+      <div class="instrument-card" onclick="showInstrumentInfo('autoclave')">
+        <div class="instrument-icon"><i class="fas fa-temperature-high"></i></div>
+        <div class="instrument-info">
+          <h3>Autoclave</h3>
+          <p>Steam sterilization (121°C)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="instrumentModal" class="modal-premium">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h3 id="modalTitle">Instrument Details</h3>
+      <button class="close-modal" id="closeModalBtn">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBodyContent">
+      <!-- dynamic content -->
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span><i class="far fa-registered"></i> 2026 Laboratory Training Program</span>
+  <span><i class="fas fa-chalkboard-user"></i> Excellence in analytical & microbial sciences</span>
+  <span><i class="fas fa-id-card"></i> GLP certified curriculum</span>
+</footer>
+
+<script>
+  // Toggle section visibility with modern button text/icon
+  function toggleSection(gridId, btnElement) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    
+    const isHidden = grid.classList.contains('hidden');
+    if (isHidden) {
+      grid.classList.remove('hidden');
+      btnElement.innerHTML = '<i class="fas fa-eye-slash"></i> <span>Hide</span>';
+    } else {
+      grid.classList.add('hidden');
+      btnElement.innerHTML = '<i class="fas fa-eye"></i> <span>Show</span>';
+    }
+  }
+
+  // Instrument details library with richer data
+  const instrumentDetails = {
+    uv: {
+      title: "UV–Visible Spectrophotometer",
+      description: "Quantifies light absorbance across UV and visible range. Essential for concentration determination, kinetic studies, and purity assessment.",
+      highlights: ["Wavelength range: 200-800 nm", "Double-beam optics", "Complies with pharmacopoeia methods"]
+    },
+    ph: {
+      title: "pH Meter",
+      description: "Precise measurement of hydrogen-ion activity. Calibration with standard buffers ensures reliable acidity/alkalinity data for aqueous solutions.",
+      highlights: ["Automatic temperature compensation", "0.01 resolution", "Glass membrane electrode"]
+    },
+    balance: {
+      title: "Analytical Balance",
+      description: "High-sensitivity mass measurement up to 0.0001 g accuracy. Critical for sample preparation, reagent weighing, and formulation.",
+      highlights: ["Internal calibration", "Draft shield protection", "Readability: 0.1 mg"]
+    },
+    dissolution: {
+      title: "Dissolution Apparatus",
+      description: "Evaluates rate of drug release from solid dosage forms (tablets/capsules). Simulates gastrointestinal conditions to ensure bioavailability.",
+      highlights: ["USP Apparatus I (basket) & II (paddle)", "Automated sampling", "Temperature control 37°C ±0.5"]
+    },
+    laf: {
+      title: "Laminar Air Flow",
+      description: "HEPA-filtered unidirectional airflow provides ISO Class 5 environment. Protects samples from microbial contamination during manipulations.",
+      highlights: ["Vertical / Horizontal airflow", "UV germicidal lamp", "Work zone sterility"]
+    },
+    autoclave: {
+      title: "Autoclave",
+      description: "Moist heat sterilization using saturated steam under pressure. Destroys microorganisms, spores, and ensures instrument/media sterility.",
+      highlights: ["121°C at 15 psi for 20 min", "Safety lock & pressure gauge", "Validated cycle logs"]
+    }
+  };
+
+  // Show modal with enhanced laboratory info
+  function showInstrumentInfo(type) {
+    const data = instrumentDetails[type];
+    if (!data) return;
+    
+    const modal = document.getElementById('instrumentModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBodyContent');
+    
+    modalTitle.innerText = data.title;
+    
+    let highlightsHtml = '';
+    if (data.highlights && data.highlights.length) {
+      highlightsHtml = '<ul style="margin-top: 12px;">' + data.highlights.map(item => `<li><i class="fas fa-microscope" style="margin-right: 10px; color: #1E88E5;"></i>${item}</li>`).join('') + '</ul>';
+    }
+    
+    modalBody.innerHTML = `
+      <div style="line-height: 1.45;">
+        <i class="fas fa-info-circle" style="color: #197c9e; margin-right: 8px;"></i> 
+        <span style="font-weight: 500;">${data.description}</span>
+        ${highlightsHtml}
+        <div class="badge-icon"><i class="fas fa-chalkboard"></i> Hands-on training module included</div>
+      </div>
+    `;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('instrumentModal');
+    if (modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Event listeners and initial state
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('instrumentModal');
+    const closeBtn = document.getElementById('closeModalBtn');
+    
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && modal.style.display === 'flex') closeModal();
+    });
+    
+    // ensure toggle buttons initial text consistency (all sections start hidden)
+    const sections = [
+      { grid: document.getElementById('analyticalGrid'), btn: document.querySelector('.section-card .toggle-modern') },
+      { grid: document.getElementById('tabletGrid'), btn: document.querySelectorAll('.section-card')[1]?.querySelector('.toggle-modern') },
+      { grid: document.getElementById('microGrid'), btn: document.querySelectorAll('.section-card')[2]?.querySelector('.toggle-modern') }
+    ];
+    // manual fix with proper selectors: first card toggle, second, third 
+    const allCards = document.querySelectorAll('.section-card');
+    if (allCards.length >= 3) {
+      const btn1 = allCards[0].querySelector('.toggle-modern');
+      const btn2 = allCards[1].querySelector('.toggle-modern');
+      const btn3 = allCards[2].querySelector('.toggle-modern');
+      if (btn1 && document.getElementById('analyticalGrid')?.classList.contains('hidden')) btn1.innerHTML = '<i class="fas fa-eye"></i> <span>Show</span>';
+      if (btn2 && document.getElementById('tabletGrid')?.classList.contains('hidden')) btn2.innerHTML = '<i class="fas fa-eye"></i> <span>Show</span>';
+      if (btn3 && document.getElementById('microGrid')?.classList.contains('hidden')) btn3.innerHTML = '<i class="fas fa-eye"></i> <span>Show</span>';
+    }
+  });
+
+  window.toggleSection = toggleSection;
+  window.showInstrumentInfo = showInstrumentInfo;
+  window.closeModal = closeModal;
+</script>
+</body>
+</html>

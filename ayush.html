@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Chemlabs - Laboratory & Science Research HTML5 Template">
+  <link href="assets/images/favicon/favicon.png" rel="icon">
+  <title>Chemlabs - Laboratory & Science Research HTML5 Template</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/all.css">
+  <link rel="stylesheet" href="assets/css/libraries.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <style>
+    .table-container {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    thead {
+      background: #2c7a7b;
+      color: #ffffff;
+    }
+
+    thead th {
+      padding: 14px;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    tbody td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e0e0e0;
+      font-size: 14px;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9fbfc;
+    }
+
+    tbody tr:hover {
+      background-color: #e6f7f8;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      thead {
+        display: none;
+      }
+
+      table,
+      tbody,
+      tr,
+      td {
+        display: block;
+        width: 100%;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        background: #fff;
+      }
+
+      td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: #555;
+      }
+    }
+
+
+
+
+    /*  */
+
+    /*  */
+  </style>
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="preloader">
+      <div class="loading"><span></span><span></span><span></span><span></span></div>
+    </div><!-- /.preloader -->
+
+    <!-- =========================
+        Header
+    =========================== -->
+    <header class="header header-layout1">
+      <div class="header-topbar">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <div class="d-flex align-items-center justify-content-between">
+                <ul class="contact-list d-flex flex-wrap align-items-center list-unstyled mb-0">
+                  <li>
+                    <i class="icon-phone"></i><a href="tel:+5565454117">Emergency Line: (002) 01061245741</a>
+                  </li>
+                  <li>
+                    <i class="icon-location"></i><a href="#">Location: Brooklyn, New York</a>
+                  </li>
+                  <li>
+                    <i class="icon-clock"></i><a href="contact-us.html">Mon - Fri: 8:00 am - 7:00 pm</a>
+                  </li>
+                </ul><!-- /.contact-list -->
+                <div class="d-flex align-items-center">
+                  <ul class="header-topbar-links d-flex list-unstyled mb-0 mr-10">
+                    <li><a href="#">Insurance</a></li>
+                    <li><a href="#">Provider Services</a></li>
+                    <li><a href="#">Accreditation</a></li>
+                  </ul><!-- /.social-icons -->
+                  <div class="miniPopup-language-area">
+                    <button class="miniPopup-language-trigger" type="button">
+                      <span>Choose language</span><span class="btn-shape"></span>
+                    </button>
+                    <ul class="miniPopup miniPopup-language list-unstyled">
+                      <li>
+                        <button>
+                          <img src="assets/images/flags/en.png" alt="en">
+                          <span>English</span>
+                        </button>
+                      </li>
+                      <li>
+                        <button>
+                          <img src="assets/images/flags/gr.png" alt="en">
+                          <span>Germany</span>
+                        </button>
+                      </li>
+                    </ul><!-- /.miniPopup-language -->
+                  </div>
+                </div>
+              </div>
+            </div><!-- /.col-12 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </div><!-- /.header-top -->
+      <nav class="navbar navbar-expand-lg sticky-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logo/Synthiya (2).png" class="logo-dark" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button">
+            <span class="menu-lines"><span></span></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="mainNavigation">
+            <ul class="navbar-nav">
+
+              <li class="nav-item">
+                <a href="index.html" class="nav-item-link">Home</a>
+              </li>
+              <li class="nav-item ">
+                <a href="about.html" class=" nav-item-link">About Us</a>
+
+              </li><!-- /.nav-item -->
+
+              <li class="nav-item has-dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle nav-item-link">Service </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="pharmaceutical.html" class="nav-item-link">Pharmaceutical Testing</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav-item">
+                    <a href="ayush.html" class="nav-item-link">AYUSH Product Testing</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav-item">
+                    <a href="cosmetictesting.html" class="nav-item-link">Cosmetic Testing</a>
+                  </li><!-- /.nav-item -->
+
+                  <li class="nav-item">
+                    <a href="microbialtesting.html" class="nav-item-link">Microbial Testing</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav-item">
+                    <a href="shelf-life-study.html" class="nav-item-link">Shelf Life Studies</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav-item">
+                    <a href="method development.html" class="nav-item-link">Method Development</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav-item">
+                    <a href="method validation.html" class="nav-item-link">Method Validation</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav-item">
+                    <a href="CDP Study.html" class="nav-item-link">CDP Study</a>
+                  </li><!-- /.nav-item -->
+
+
+
+
+                </ul><!-- /.dropdown-menu -->
+              </li><!-- /.nav-item -->
+              <li class="nav-item has-dropdown dropdown">
+                <a href="#" class="nav-item-link dropdown-toggle" data-bs-toggle="dropdown">Trainings</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="stran.html" class="nav-item-link">General Form</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav-item">
+                    <a href="frompharm.html" class="nav-item-link">B Form</a>
+                  </li><!-- /.nav-item -->
+                  <!-- 
+                      <li class="nav-item">
+                    <a href="blog-single-post.html" class="nav-item-link">GC Demo</a>
+                  </li>   -->
+
+                  <li class="nav-item">
+                    <a href="project.html" class="nav-item-link">college project</a>
+                  </li><!-- /.nav-item -->
+                </ul><!-- /.dropdown-menu -->
+              </li><!-- /.nav-item -->
+              <li class="nav-item">
+                <a href="accreditations.html" class="nav-item-link">Accreditations</a>
+              </li><!-- /.nav-item -->
+
+
+              <li class="nav-item">
+                <a href="careers.html" class="nav-item-link">Carees</a>
+              </li><!-- /.nav-item -->
+
+              <li class="nav-item">
+                <a href="gallery.html" class="nav-item-link">Gallery</a>
+              </li><!-- /.nav-item -->
+
+
+              <li class="nav-item">
+                <a href="contact-us.html" class="nav-item-link">Contact</a>
+              </li><!-- /.nav-item -->
+
+
+            </ul><!-- /.navbar-nav -->
+
+            <button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button>
+          </div><!-- /.navbar-collapse -->
+          <div class="d-none d-xl-flex align-items-center position-relative ml-30">
+            <!-- <a href="tests-results.html" class="btn btn-secondary btn-link mr-20">
+              Check Results
+            </a> -->
+            <a href="tests-book-visit.html" class="btn btn-primary btn-contact">
+              Book a Lab Visit
+            </a>
+          </div>
+        </div><!-- /.container -->
+      </nav><!-- /.navabr -->
+    </header><!-- /.Header -->
+
+
+    <!-- ========================
+       page title 
+    =========================== -->
+    <section class="page-title-layout1 page-title-light text-center bg-overlay bg-parallax">
+      <div class="bg-img"><img src="assets/images/shootimg/img 28.JPG" alt="background"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-xl-6 offset-xl-3">
+            <h1 class="pagetitle-heading">AYUSH </h1>
+            <p class="pagetitle-desc">Your focus is on providing patients the best possible care and we’re here to
+              help. To complement our comprehensive menu of tests, we provide resources to registered healthcare
+              professionals to support your testing needs.
+            </p>
+            <div class="d-flex flex-wrap align-items-center justify-content-center">
+              <a href="tests-services.html" class="btn btn-white mb-10 mx-3">
+                <i class="icon-arrow-right"></i>
+                <span>Explore Testing Services</span>
+              </a>
+              <a href="team.html" class="btn btn-white btn-outlined mb-10 mx-3">
+                <span>Contact Our Experts</span>
+              </a>
+            </div>
+            <nav>
+              <ol class="breadcrumb d-flex justify-content-center mt-80 mb-0">
+                <li class="breadcrumb-item">
+                  <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="about-us.html">About Us</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">About Us</li>
+              </ol>
+            </nav>
+          </div><!-- /.col-xl-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+      <a class="home-nav" href="index.html">
+        <i class="icon-home"></i>
+      </a>
+      <div class="curve-top-shape">
+        <svg class="curve-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+          <path class="curve-path" d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"></path>
+        </svg>
+      </div><!-- /.curve -->
+    </section><!-- /.page-title -->
+
+
+
+
+
+
+
+
+
+    <section class=" pb-80">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-4">
+            <aside class="sidebar has-marign-right sticky-top mb-50">
+              <div class="widget widget-categories">
+                <h5 class="widget-title">AYUSH </h5>
+                <div class="widget-content">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#"><span class="cat-title">AYUSH Products</span><span class="cat-count">2</span></a>
+                    </li>
+                    <li>
+                      <a href="#"><span class="cat-title">Ayurveda & Siddha Product Categories</span><span
+                          class="cat-count">4</span></a>
+                    </li>
+                    <li>
+                      <a class="active" href="#"><span class="cat-title">Unani Product Categories</span><span
+                          class="cat-count">3</span></a>
+                    </li>
+                    <!-- <li>
+                      <a href="#"><span class="cat-title">Pandemic</span><span class="cat-count">12</span></a>
+                    </li>
+                    <li>
+                      <a href="#"><span class="cat-title">Hype</span><span class="cat-count">7</span></a>
+                    </li>
+                    <li>
+                      <a href="#"><span class="cat-title">Adults</span><span class="cat-count">5</span></a>
+                    </li> -->
+                  </ul>
+                </div><!-- /.widget-content -->
+              </div><!-- /.widget-categories -->
+              <div class="widget widget-banner bg-overlay bg-overlay-primary overflow-hidden">
+                <div class="bg-img"><img src="assets/images/banners/4.jpg" alt="background"></div>
+                <div class="widget-content">
+                  <h4 class="widget-title">Preparing for Test Help Ensure It Go Smoothly.</h4>
+                  <p class="widget-desc">To reduce your wait time, complete the personal information on the form in
+                    advance most routine tests.
+                  </p>
+                  <a href="contact-us.html" class="btn btn-white  btn-block mb-30">
+                    <span>Looking for More Info!</span>
+                    <i class="icon-arrow-right"></i>
+                  </a>
+                  <a href="tel:+201061245741" class="phone-number d-flex align-items-center">
+                    <i class="icon-phone mr-20"></i> <span>+91 84283 27588</span>
+                  </a>
+                </div><!-- /.widget-content -->
+              </div><!-- /.widget-banner -->
+              <!-- <div class="widget widget-download">
+                <h5 class="widget-title">Download Brochure</h5>
+                <a href="#" class="btn btn-secondary btn-block">
+                  <i class="icon-pdf-file btn-icon"></i>
+                  <span class="btn-text">Our Report 2022</span>
+                </a>
+                <a href="#" class="btn btn-primary btn-block">
+                  <i class="icon-pdf-file btn-icon"></i>
+                  <span class="btn-text">Company Brochure</span>
+                </a>
+              </div> -->
+
+              <!-- /.widget-download -->
+            </aside><!-- /.sidebar -->
+          </div><!-- /.col-lg-4 -->
+          <div class="col-sm-12 col-md-12 col-lg-8">
+            <div class="text-block">
+              <h4 class="text-block-title">AYUSH Product Analysis</h4>
+              <p class="text-block-desc mb-20">The quality of traditional medicines plays a critical role in consumer
+                confidence and regulatory acceptance.<br>
+                Synthiya Research Labs provides analytical testing services for Ayurveda, Siddha, and Unani products
+                covering raw materials, in-process materials, and finished formulations.<br>
+                Testing includes physicochemical evaluation, identification testing, assay determination, microbial
+                analysis, heavy metal screening, and stability assessment.<br>
+                Our laboratory supports AYUSH manufacturers in maintaining product quality and compliance with
+                applicable requirements.
+              </p>
+              <div class="video-banner mb-50">
+                <img src="assets/images/shootimg/img 27.JPG" alt="banner">
+                <a class="video-btn video-btn-white popup-video" href="https://www.youtube.com/watch?v=TKnufs85hXk">
+                  <div class="video-player">
+                    <i class="fa fa-play"></i>
+                  </div>
+                </a>
+              </div><!-- /.video-banner -->
+
+              <h4 class="text-block-title">Testing Scope Under Form 48 Licence (AYUSH Products)</h4>
+              <p class="text-block-desc mb-20">The laboratory is authorized to test a comprehensive range of dosage
+                forms across Ayurveda, Siddha, and Unani systems, including:</p>
+
+              <h4 class="text-block-title">Ayurveda & Siddha Product Categories</h4>
+
+
+              <p class="text-block-desc mb-20">Ayurveda and Siddha systems use a wide variety of dosage forms prepared
+                from herbs, minerals, and animal-derived ingredients. Each category represents a specific method of
+                preparation and therapeutic use:</p>
+
+
+              <table border="1" cellspacing="0" cellpadding="8">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Dosage Form Type</th>
+                    <th>Description / Use</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Asava & Arista</td>
+                    <td>Liquid (Fermented)</td>
+                    <td>Self-generated alcohol formulations for digestion & chronic diseases</td>
+                  </tr>
+                  <tr>
+                    <td>Arka</td>
+                    <td>Liquid (Distillate)</td>
+                    <td>Distilled herbal extracts for quick absorption</td>
+                  </tr>
+                  <tr>
+                    <td>Avaleha / Paka</td>
+                    <td>Semi-solid</td>
+                    <td>Herbal jam-like preparations for respiratory & nutritional use</td>
+                  </tr>
+                  <tr>
+                    <td>Kvatha / Kashaya</td>
+                    <td>Liquid (Decoction)</td>
+                    <td>Boiled herbal extracts used internally</td>
+                  </tr>
+                  <tr>
+                    <td>Churna</td>
+                    <td>Powder</td>
+                    <td>Fine powders for oral/external use</td>
+                  </tr>
+                  <tr>
+                    <td>Guggulu</td>
+                    <td>Solid/Semi-solid</td>
+                    <td>Resin-based anti-inflammatory formulations</td>
+                  </tr>
+                  <tr>
+                    <td>Ghrita</td>
+                    <td>Semi-solid (Ghee)</td>
+                    <td>Medicated ghee for brain & systemic benefits</td>
+                  </tr>
+                  <tr>
+                    <td>Taila</td>
+                    <td>Liquid (Oil)</td>
+                    <td>Medicated oils for internal/external use</td>
+                  </tr>
+                  <tr>
+                    <td>Lepa</td>
+                    <td>Paste</td>
+                    <td>External application for skin & pain relief</td>
+                  </tr>
+                  <tr>
+                    <td>Vati / Gutika</td>
+                    <td>Solid (Tablet/Pill)</td>
+                    <td>Convenient oral dosage forms</td>
+                  </tr>
+                  <tr>
+                    <td>Varti</td>
+                    <td>Solid</td>
+                    <td>Suppositories or medicated wicks</td>
+                  </tr>
+                  <tr>
+                    <td>Anjana / Kanmai</td>
+                    <td>Semi-solid</td>
+                    <td>Eye applications (collyrium)</td>
+                  </tr>
+                  <tr>
+                    <td>Netrabindu</td>
+                    <td>Liquid</td>
+                    <td>Eye drops</td>
+                  </tr>
+                  <tr>
+                    <td>Sattva / Ghana</td>
+                    <td>Solid Extract</td>
+                    <td>Concentrated herbal extracts</td>
+                  </tr>
+                  <tr>
+                    <td>Kupipakva Rasayana</td>
+                    <td>Solid</td>
+                    <td>Special herbo-mineral preparations</td>
+                  </tr>
+                  <tr>
+                    <td>Parpati / Pishti / Bhasma</td>
+                    <td>Solid</td>
+                    <td>Calcined mineral/metal preparations</td>
+                  </tr>
+                  <tr>
+                    <td>Rasayoga / Lauha</td>
+                    <td>Solid</td>
+                    <td>Herbo-mineral formulations (often iron-based)</td>
+                  </tr>
+                  <tr>
+                    <td>Kshar / Kshar Sutra</td>
+                    <td>Solid</td>
+                    <td>Alkaline preparations (including surgical use)</td>
+                  </tr>
+                  <tr>
+                    <td>Dhoomravarti</td>
+                    <td>Solid</td>
+                    <td>Fumigation/smoke therapy</td>
+                  </tr>
+                  <tr>
+                    <td>Nasya</td>
+                    <td>Liquid</td>
+                    <td>Nasal administration</td>
+                  </tr>
+                  <tr>
+                    <td>Swarasa</td>
+                    <td>Liquid</td>
+                    <td>Fresh herbal juice</td>
+                  </tr>
+                  <tr>
+                    <td>Capsules</td>
+                    <td>Solid</td>
+                    <td>Modern dosage form</td>
+                  </tr>
+                  <tr>
+                    <td>Ointments</td>
+                    <td>Semi-solid</td>
+                    <td>External application</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <br>
+
+
+
+
+
+              <h4 class="text-block-title">Unani Product Categories</h4>
+
+
+
+
+              <p class="text-block-desc mb-20">Unani medicine follows a holistic approach and uses diverse dosage forms
+                derived from herbal, mineral, and animal sources. These are categorized based on form, preparation
+                technique, and therapeutic application: </p>
+
+
+
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Dosage Form Type</th>
+                      <th>Description / Use</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Category">Majoon, Itrifal, Jawarish</td>
+                      <td data-label="Dosage">Semi-solid</td>
+                      <td data-label="Description">Herbal linctus for digestion & vitality</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Khameera</td>
+                      <td data-label="Dosage">Semi-solid</td>
+                      <td data-label="Description">Cardio-tonic and brain tonic</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Laooq, Halwa</td>
+                      <td data-label="Dosage">Semi-solid</td>
+                      <td data-label="Description">Respiratory & nutritive formulations</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Sufoof</td>
+                      <td data-label="Dosage">Powder</td>
+                      <td data-label="Description">Oral herbal powders</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Zuroor / Sunoon</td>
+                      <td data-label="Dosage">Powder</td>
+                      <td data-label="Description">Dental or external powders</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Namak / Khar</td>
+                      <td data-label="Dosage">Solid</td>
+                      <td data-label="Description">Saline/alkaline preparations</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Roghan</td>
+                      <td data-label="Dosage">Oil</td>
+                      <td data-label="Description">Medicated oils</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Zimad</td>
+                      <td data-label="Dosage">Paste</td>
+                      <td data-label="Description">External application</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Marham</td>
+                      <td data-label="Dosage">Ointment</td>
+                      <td data-label="Description">Wound healing applications</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Habb</td>
+                      <td data-label="Dosage">Pill</td>
+                      <td data-label="Description">Solid oral dosage</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Qurs</td>
+                      <td data-label="Dosage">Tablet</td>
+                      <td data-label="Description">Compressed tablet form</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Shiyaf</td>
+                      <td data-label="Dosage">Solid</td>
+                      <td data-label="Description">Suppositories</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Qutoor</td>
+                      <td data-label="Dosage">Liquid</td>
+                      <td data-label="Description">Drops (eye/ear/nasal)</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Kohal / Surma</td>
+                      <td data-label="Dosage">Powder</td>
+                      <td data-label="Description">Eye preparations</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Kushta</td>
+                      <td data-label="Dosage">Solid</td>
+                      <td data-label="Description">Calcined mineral preparations</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Joshanda</td>
+                      <td data-label="Dosage">Liquid</td>
+                      <td data-label="Description">Herbal decoction</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Sharbat / Sikanjabeen</td>
+                      <td data-label="Dosage">Liquid (Syrup)</td>
+                      <td data-label="Description">Sweet medicinal syrups</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Arq</td>
+                      <td data-label="Dosage">Liquid (Distillate)</td>
+                      <td data-label="Description">Distilled herbal water</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Bakhoor</td>
+                      <td data-label="Dosage">Solid</td>
+                      <td data-label="Description">Fumigation/inhalation</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Nabati / Maadni / Haiwani</td>
+                      <td data-label="Dosage">Varies</td>
+                      <td data-label="Description">Plant, mineral & animal-based drugs</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Natool</td>
+                      <td data-label="Dosage">Liquid</td>
+                      <td data-label="Description">Medicated wash</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Nashooq / Naswar</td>
+                      <td data-label="Dosage">Powder</td>
+                      <td data-label="Description">Nasal administration</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Shamoom</td>
+                      <td data-label="Dosage">Inhalation</td>
+                      <td data-label="Description">Aromatic therapy</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Saoot</td>
+                      <td data-label="Dosage">Liquid</td>
+                      <td data-label="Description">Nasal drops</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Lashooq</td>
+                      <td data-label="Dosage">Semi-solid</td>
+                      <td data-label="Description">Linctus</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Gulqand</td>
+                      <td data-label="Dosage">Semi-solid</td>
+                      <td data-label="Description">Herbal preserve</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Huqna</td>
+                      <td data-label="Dosage">Liquid</td>
+                      <td data-label="Description">Enema</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Mazmazah</td>
+                      <td data-label="Dosage">Liquid</td>
+                      <td data-label="Description">Mouthwash</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Naurah</td>
+                      <td data-label="Dosage">Semi-solid</td>
+                      <td data-label="Description">Depilatory</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Vajoor</td>
+                      <td data-label="Dosage">Semi-solid</td>
+                      <td data-label="Description">Throat application</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Category">Latookh</td>
+                      <td data-label="Dosage">Paste</td>
+                      <td data-label="Description">External application</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+
+
+
+              <br> <br>
+
+
+              <h4 class="text-block-title">Testing Scope Under Form COS-23 Licence (Cosmetic Products)</h4>
+
+
+
+
+              <p class="text-block-desc mb-20">The laboratory is authorized to test cosmetic products including: </p>
+
+              <ul>
+                <li>Powders</li>
+                <li>Infant skin powders</li>
+                <li>Creams, lotions, emulsions, and pastes</li>
+                <li>Cleansing products (face washes and similar preparations)</li>
+              </ul>
+
+
+
+              <h4 class="text-block-title">Conclusion </h4>
+
+
+
+
+              <p class="text-block-desc mb-20">With its broad testing scope and regulatory approvals, the laboratory
+                serves as a comprehensive testing facility for AYUSH and cosmetic products, supporting quality
+                assurance, regulatory compliance, and product safety across diverse formulations.</p>
+
+
+
+
+
+            </div><!-- /.text-block -->
+            <div class="slick-carousel m-slides-0 mb-30"
+              data-slick='{"slidesToShow": 2, "slidesToScroll": 1, "autoplay": true, "arrows": false, "dots": false, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 1}}, {"breakpoint": 480, "settings": {"slidesToShow": 1}}]}'>
+              <!-- Gallery item #1 -->
+              <div class="gallery-img">
+                <a class="popup-gallery-item" href="assets/images/shootimg/img 20.JPG">
+                  <img src="assets/images/shootimg/img 21.JPG" alt="gallery img">
+                </a>
+              </div><!-- /.gallery-img -->
+              <!-- Gallery item #2 -->
+              <div class="gallery-img">
+                <a class="popup-gallery-item" href="assets/images/shootimg/img 22.JPG">
+                  <img src="assets/images/shootimg/img 23.JPG" alt="gallery img">
+                </a>
+              </div><!-- /.gallery-img -->
+              <!-- Gallery item #3 -->
+              <div class="gallery-img">
+                <a class="popup-gallery-item" href="assets/images/shootimg/img 24.JPG">
+                  <img src="assets/images/shootimg/img 25.JPG" alt="gallery img">
+                </a>
+              </div><!-- /.gallery-img -->
+              <!-- Gallery item #4 -->
+              <div class="gallery-img">
+                <a class="popup-gallery-item" href="assets/images/shootimg/img 26.JPG">
+                  <img src="assets/images/shootimg/img 16.JPG" alt="gallery img">
+                </a>
+              </div><!-- /.gallery-img -->
+              <!-- Gallery item #5 -->
+              <div class="gallery-img">
+                <a class="popup-gallery-item" href="assets/images/shootimg/img 17.JPG">
+                  <img src="assets/images/shootimg/img 18.JPG" alt="gallery img">
+                </a>
+              </div><!-- /.gallery-img -->
+              <!-- Gallery item #6 -->
+              <div class="gallery-img">
+                <a class="popup-gallery-item" href="assets/images/shootimg/img 19.JPG">
+                  <img src="assets/images/shootimg/img 20.JPG" alt="gallery img">
+                </a>
+              </div><!-- /.gallery-img -->
+            </div><!-- /.carousel -->
+
+            <!-- /.widget-plan -->
+          </div><!-- /.col-lg-8 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section>
+
+
+
+    <!-- ========================
+      Footer
+    ========================== -->
+    <footer class="footer">
+      <div class="footer-primary">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-3">
+              <div class="footer-widget-about">
+                <img src="assets/images/logo/Synthiya (2).png" alt="logo">
+              </div><!-- /.footer-widget-about -->
+            </div><!-- /.col-lg-3 -->
+            <div class="col-6 col-lg-2">
+              <div class="footer-widget-nav">
+                <h6 class="footer-widget-title">About Us</h6>
+                <nav>
+                  <ul class="list-unstyled">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About Us</a></li>
+                    <!-- <li><a href="">Service</a></li>
+                    <li><a href="">Trainings</a></li> -->
+                    <li><a href="">Accreditations</a></li>
+
+                    <li><a href="">Carees</a></li>
+                    <li><a href="">Gallery</a></li>
+
+                    <li><a href="">contact</a></li>
+                  </ul>
+                </nav>
+              </div><!-- /.footer-widget-content -->
+            </div><!-- /.col-lg-2 -->
+            <div class="col-6 col-lg-2">
+              <div class="footer-widget-nav">
+                <h6 class="footer-widget-title">Tests & Services</h6>
+                <nav>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Pharmaceutical Testing</a></li>
+                    <li><a href="#"> AYUSH Product Testing</a></li>
+                    <li><a href="#"> Cosmetic Testing</a></li>
+                    <li><a href="#">Microbial Testing </a></li>
+                    <li><a href="#">Shelf Life Studies</a></li>
+                    <li><a href="#">Method Development & Validation</a></li>
+                  </ul>
+                </nav>
+              </div><!-- /.footer-widget-content -->
+            </div><!-- /.col-lg-2 -->
+            <div class="col-6 col-lg-2">
+              <div class="footer-widget-nav">
+                <h6 class="footer-widget-title">Trainings</h6>
+                <nav>
+                  <ul class="list-unstyled">
+                    <li><a href="#">General Form</a></li>
+                    <li><a href="#">B Form</a></li>
+                    <li><a href="#">College Project</a></li>
+
+                  </ul>
+                </nav>
+              </div><!-- /.footer-widget-content -->
+            </div><!-- /.col-lg-2 -->
+            <div class="col-6 col-lg-3">
+              <div class="footer-widget-contact">
+                <h6 class="footer-widget-title">Quick Contacts</h6>
+                <p>If you have any questions or need help, feel free to contact with our team.</p>
+                <ul class="contact-list list-unstyled">
+                  <li>
+                    <p>Send Us Email:</p>
+                    <a href="https://7oroof.com/cdn-cgi/l/email-protection#42212a272f2e23203102752d302d2d246c212d2f">
+                      <i class="contact-icon icon-email"></i> <span><span class="__cf_email__"
+                          data-cfemail="caa9a2afa7a6aba8b98afda5b8a5a5ace4a9a5a7"> Srlabpl@gmail.com</span></span>
+                    </a>
+                  </li>
+                  <li>
+                    <p>Call Us Today:</p>
+                    <a href="tel:9360411994
+">
+                      <i class="contact-icon icon-phone"></i> <span>9360411994</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div><!-- /.col-lg-3 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </div><!-- /.footer-primary -->
+      <div class="footer-secondary">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-sm-12 col-md-12 col-lg-7">
+              <nav>
+                <ul class="list-unstyled footer-copyright-links d-flex flex-wrap mb-0">
+                  <li><a href="#">Privacy Statement</a></li>
+                  <li><a href="#">Terms of Use</a></li>
+                  <li><a href="#">Notice of Nondiscrimination</a></li>
+                  <li><a href="#">Report a Vulnerability</a></li>
+                </ul>
+              </nav>
+              <div class="mt-1">
+                <span>&copy; 2026 getit media, All Rights Reserved. </span>
+                <a href="#"></a>
+              </div>
+            </div><!-- /.col-lg-6 -->
+            <div class="col-sm-12 col-md-12 col-lg-5 d-flex flex-wrap justify-content-between">
+              <ul class="social-icons list-unstyled mb-0 mr-50">
+                <li>
+                  <a href="#"><i class="social-icon icon-facebook"></i><span class="social-title">Facebook</span></a>
+                </li>
+                <li>
+                  <a href="#"><i class="social-icon icon-twitter"></i><span class="social-title">Twitter</span></a>
+                </li>
+                <li>
+                  <a href="#"><i class="social-icon icon-youtube"></i><span class="social-title">Youtube</span></a>
+                </li>
+              </ul><!-- /.social-icons -->
+              <button id="scrollTopBtn">
+                <span class="btn-text">Back To Top </span> <i class="icon-arrow-long"></i>
+              </button>
+            </div>
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </div><!-- /.footer-secondary -->
+    </footer>
+    <!-- /.Footer -->
+
+    <svg class="svg-pathes" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="rounded-clippath-filter">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"></feGaussianBlur>
+          <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+            result="rounded-clippath-filter">
+          </feColorMatrix>
+          <feComposite in="SourceGraphic" in2="rounded-clippath-filter" operator="atop"></feComposite>
+        </filter>
+      </defs>
+      <defs>
+        <filter id="rounded-clippath-filter-small">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"></feGaussianBlur>
+          <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 10 -4"
+            result="rounded-clippath-filter-small"></feColorMatrix>
+          <feComposite in="SourceGraphic" in2="rounded-clippath-filter-small" operator="atop"></feComposite>
+        </filter>
+      </defs>
+      <clipPath id="curve-left" clipPathUnits="objectBoundingBox">
+        <path
+          d="M0,0.998 v0.002 H1 V0 h-0.059 C0.832,0.008,0.596,0.068,0.48,0.414 A1,1,0,0,0,0.445,0.551 C0.376,0.899,0.166,0.986,0,0.998">
+        </path>
+      </clipPath>
+      <clipPath id="curve-right" clipPathUnits="objectBoundingBox">
+        <path
+          d="M1,0.998 v0.002 H0 V0 H0.059 C0.168,0.008,0.404,0.068,0.519,0.414 A1,1,0,0,1,0.555,0.551 C0.624,0.899,0.834,0.986,1,0.998">
+        </path>
+      </clipPath>
+      <clipPath id="curve-shape" clipPathUnits="objectBoundingBox">
+        <path d="M1600,3277.99c-152.02-27.95-453.41-46.99-800.382-46.99-346.4,0-647.36,19.12-799.618,47Z"
+          transform="translate(0 -3231)">
+        </path>
+      </clipPath>
+    </svg>
+
+    <div class="search-popup">
+      <button type="button" class="search-popup-close"><i class="fas fa-times"></i></button>
+      <form class="search-popup-form">
+        <input type="text" class="search-popup-form-input" placeholder="Type Words Then Enter">
+        <button class="search-popup-btn"><i class="icon-search"></i></button>
+      </form>
+    </div><!-- /.search-popup -->
+  </div><!-- /.wrapper -->
+
+  <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    defer></script>
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516"
+    integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+    data-cf-beacon='{"version":"2024.11.0","token":"8e4efc0026d0404083dfbf37b48d3c38","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
+</body>
+
+
+</html>
